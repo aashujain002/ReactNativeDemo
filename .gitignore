@@ -140,13 +140,13 @@ ios/*.xcuserstate
 ios/Podfile.lock
 *.xcuserstate
 
-# -----------------------------
-# TypeScript / JavaScript
-# -----------------------------
-*.ts
-*.tsx
-*.js
-*.jsx
+# # -----------------------------
+# # TypeScript / JavaScript
+# # -----------------------------
+# *.ts
+# *.tsx
+# *.js
+# *.jsx
 
 # -----------------------------
 # IDEs / Editors
