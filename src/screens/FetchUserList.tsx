@@ -23,7 +23,7 @@ type User = {
 
 export default function FetchUserList({ navigation }: Props) {
 
-    const { data, loading, error } = useFetch<User[]>('https://jsonplaceholder.typicode.com/users', 170);
+    const { data, loading, error } = useFetch<User[]>('https://jsonplaceholder.typicode.com/users', 5000);
 
     if (loading) return <ActivityIndicator size="large" color="#000" style={styles.center} />;
     if (error) return <Text style={[styles.center, styles.error]}>Error: {error}</Text>;
