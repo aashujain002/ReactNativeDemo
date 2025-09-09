@@ -1,19 +1,9 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackNavigationProp } from '../navigation/NavTypes';
 import React, { useState } from 'react';
 import { Button, FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-type RootStackParamList = {
-    Home: undefined;
-    Details: undefined;
-    ToDoList: undefined;
-};
-
-type ToDoListScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'ToDoList'>;
-
-type Props = {
-    navigation: ToDoListScreenNavigationProp;
-};
+type Props = { navigation: RootStackNavigationProp<'ToDoList'> };
 
 export default function ToDoList({ navigation }: Props) {
 

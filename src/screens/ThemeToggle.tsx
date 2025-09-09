@@ -1,17 +1,8 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackNavigationProp } from '../navigation/NavTypes';
 import React from 'react';
 import { DarkModeToggle } from '../components/DarkModeToggle';
 
-type RootStackParamList = {
-    Home: undefined;
-    ThemeToggle: undefined;
-};
-
-type ThemeToggleNavigationProp = NativeStackNavigationProp<RootStackParamList, 'ThemeToggle'>;
-
-type Props = {
-    navigation: ThemeToggleNavigationProp;
-};
+type Props = { navigation: RootStackNavigationProp<'ThemeToggle'> };
 
 export default function ThemeToggle({ navigation }: Props) {
     const [isDarkMode, setIsDarkMode] = React.useState(false);

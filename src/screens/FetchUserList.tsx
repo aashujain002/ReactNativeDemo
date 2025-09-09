@@ -1,19 +1,10 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackNavigationProp } from '../navigation/NavTypes';
 import React from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useFetch } from '../hooks/useFetch';
 
-type RootStackParamList = {
-    Home: undefined;
-    FetchUserList: undefined;
-};
-
-type FetchUserListNavigationProp = NativeStackNavigationProp<RootStackParamList, 'FetchUserList'>;
-
-type Props = {
-    navigation: FetchUserListNavigationProp;
-};
+type Props = { navigation: RootStackNavigationProp<'FetchUserList'> };
 
 type User = {
     id: number;

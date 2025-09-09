@@ -1,20 +1,11 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackNavigationProp } from '../navigation/NavTypes';
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import InputCard from '../components/InputCard';
 import { MemoizedComponent } from '../components/MemoizedComponent';
 
-type RootStackParamList = {
-    Home: undefined;
-    Details: undefined;
-};
-
-type DetailsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Details'>;
-
-type Props = {
-    navigation: DetailsScreenNavigationProp;
-};
+type Props = { navigation: RootStackNavigationProp<'Details'> };
 
 export default function InputScreen({ navigation }: Props) {
     return (

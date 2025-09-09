@@ -1,18 +1,9 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackNavigationProp } from '../navigation/NavTypes';
 import React from 'react';
 import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-type RootStackParamList = {
-    Home: undefined;
-    Grid: undefined;
-};
-
-type GridScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Grid'>;
-
-type Props = {
-    navigation: GridScreenNavigationProp;
-};
+type Props = { navigation: RootStackNavigationProp<'Grid'> };
 
 // Data for cards
 const cardData = [

@@ -1,4 +1,4 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackNavigationProp } from '../navigation/NavTypes';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -9,20 +9,7 @@ import GreetingCardWithToggle from '../components/GreetingCardWithToggle';
 import NavCard from '../components/NavCard';
 import TimerComponent from '../components/TimerComponent';
 
-type RootStackParamList = {
-    Home: undefined;
-    Details: undefined;
-    ToDoList: undefined;
-    Grid: undefined;
-    FetchUserList: undefined;
-    ThemeToggle: undefined;
-};
-
-type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
-
-type Props = {
-    navigation: HomeScreenNavigationProp;
-};
+type Props = { navigation: RootStackNavigationProp<'Home'> };
 
 export default function HomeScreen({ navigation }: Props) {
     const [count, setCount] = useState(0);
@@ -34,6 +21,14 @@ export default function HomeScreen({ navigation }: Props) {
         <SafeAreaProvider>
             <SafeAreaView style={styles.safeArea}>
                 <ScrollView>
+
+                    <NavCard
+                        title="News Reader"
+                        onPress={() => navigation.navigate('NewsReader')} />
+
+                    <NavCard
+                        title="Weather Dashboard"
+                        onPress={() => navigation.navigate('Weather')} />
 
                     <NavCard
                         title="Input & Memo Screen"
