@@ -31,6 +31,14 @@ export default function HomeScreen({ navigation }: Props) {
                         onPress={() => navigation.navigate('Weather')} />
 
                     <NavCard
+                        title="Product List"
+                        onPress={() => navigation.navigate('ProductList')} />
+
+                    <NavCard
+                        title="Expense Tracker"
+                        onPress={() => navigation.navigate('ExpenseTracker')} />
+
+                    <NavCard
                         title="Input & Memo Screen"
                         onPress={() => navigation.navigate('Details')} />
 
