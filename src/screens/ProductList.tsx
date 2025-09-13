@@ -122,25 +122,30 @@ const ProductList: React.FC<Props> = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             {error ? <Text style={styles.error}>{error}</Text> : null}
-            <FlatList
-                data={products}
-                keyExtractor={keyExtractor}
-                numColumns={2}
-                columnWrapperStyle={styles.row}
-                renderItem={({ item }) => (
-                    <ProductCard title={item.title} price={item.price} thumbnail={item.thumbnail} />
-                )}
-                contentContainerStyle={{ paddingBottom: 40, paddingHorizontal: 4 }}
-                onEndReached={onEndReached}
-                onEndReachedThreshold={0.4}
-                refreshing={refreshing}
-                onRefresh={onRefresh}
-                ListFooterComponent={loading && products.length > 0 ? <ActivityIndicator style={{ marginVertical: 16 }} /> : null}
-                initialNumToRender={10}
-                windowSize={10}
-                removeClippedSubviews
-            />
-            {loading && products.length === 0 && <ActivityIndicator style={{ marginTop: 60 }} />}
+            {loading && products.length === 0 ? (
+                <View style={{ flex:1, alignItems:'center', justifyContent:'center', marginTop:40 }}>
+                    <ActivityIndicator />
+                </View>
+            ) : (
+                <FlatList
+                    data={products}
+                    keyExtractor={keyExtractor}
+                    numColumns={2}
+                    columnWrapperStyle={styles.row}
+                    renderItem={({ item }) => (
+                        <ProductCard title={item.title} price={item.price} thumbnail={item.thumbnail} />
+                    )}
+                    contentContainerStyle={{ paddingBottom: 40, paddingHorizontal: 4 }}
+                    onEndReached={onEndReached}
+                    onEndReachedThreshold={0.4}
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                    ListFooterComponent={loading && products.length > 0 ? <ActivityIndicator style={{ marginVertical: 16 }} /> : null}
+                    initialNumToRender={10}
+                    windowSize={10}
+                    removeClippedSubviews
+                />
+            )}
         </View>
     );
 };
